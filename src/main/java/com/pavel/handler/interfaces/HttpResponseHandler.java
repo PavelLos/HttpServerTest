@@ -1,9 +1,11 @@
 package com.pavel.handler.interfaces;
 
 
+import java.io.IOException;
+
 public interface HttpResponseHandler {
 
-    String doGet(String url);
+    byte[] doGet(String url) throws IOException;
 
     void doPost();
 

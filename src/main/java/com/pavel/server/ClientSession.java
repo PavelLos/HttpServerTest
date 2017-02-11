@@ -30,14 +30,12 @@ public class ClientSession extends Thread {
     public void run() {
         try {
             inputRequest = requestHandler.getInputRequest(input);
-            //requestHandler.getRequestHeaders(inputRequest);
-            String response = httpResponse.httpMethod(
+            requestHandler.getRequestHeaders(inputRequest);
+            byte[] response = httpResponse.httpMethod(
                     requestHandler.getMethod(inputRequest.get(0)),
                     requestHandler.getRequestURI(inputRequest.get(0))
             );
-            System.out.println(response);
-            output.write(response.getBytes());
-            output.flush();
+            httpResponse.sendResponse(output, response);
 
         } catch (IOException e) {
             e.printStackTrace();

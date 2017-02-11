@@ -5,11 +5,15 @@ import com.pavel.constants.PagesPath;
 import com.pavel.handler.interfaces.HttpResponseHandler;
 import com.pavel.server.HttpParser;
 
-import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
 
@@ -17,21 +21,17 @@ import java.util.TimeZone;
 public class ResponseHandler implements HttpResponseHandler {
 
     @Override
-    public String doGet(String url) {
-        StringBuffer response = new StringBuffer();
+    public byte[] doGet(String url) throws IOException {
         String path = HttpParser.getPath(url);
         if (checkPath(path)) {
-            StringBuffer document = createDocument(path);
-            StringBuffer headers = createHeaders(HttpStatus.STATUS_200.getConstant(), document.length());
-            response.append(headers).append(document);
-            //sendResponse(output, response);
+            byte[] document = createDocument(path);
+            byte[] headers = createHeaders(HttpStatus.STATUS_200.getConstant(), document.length);
+            return createResponse(headers, document);
         } else {
-            StringBuffer document = createDocument(PagesPath.NOT_FOUND);
-            StringBuffer headers = createHeaders(HttpStatus.STATUS_404.getConstant(), document.length());
-            response.append(headers).append(document);
-            //sendResponse(output, response);
+            byte[] document = createDocument(PagesPath.NOT_FOUND);
+            byte[] headers = createHeaders(HttpStatus.STATUS_404.getConstant(), document.length);
+            return createResponse(headers, document);
         }
-        return String.valueOf(response);
     }
 
     @Override
@@ -44,45 +44,42 @@ public class ResponseHandler implements HttpResponseHandler {
 
     }
 
-    /*private void sendResponse(OutputStream output, StringBuilder string) {
-        String response = String.valueOf(string);
-        try {
-            output.write(response.getBytes());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }*/
-
-    private StringBuffer createHeaders(String status, int length) {
-        StringBuffer responseHeader = new StringBuffer();
-        responseHeader.append("HTTP/1.1 " + status + "\r\n");
-        responseHeader.append("Date: " + createDate() + "\r\n");
-        responseHeader.append("Server: Http Server\r\n");
-        //responseHeader.append("Content-Type: text/html\r\n");
-        responseHeader.append("Content-Length: " + length + "\r\n");
-        responseHeader.append("Connection: keep-alive\r\n\r\n");
-        return responseHeader;
+    private byte[] createHeaders(String status, int length) {
+        String responseHeader =
+                "HTTP/1.1 " + status + "\r\n" +
+                        "Date: " + createDate() + "\r\n" +
+                        "Server: Http Server\r\n" +
+                        "Content-Length: " + length + "\r\n" +
+                        "Connection: keep-alive\r\n\r\n";
+        return responseHeader.getBytes();
     }
 
-
-    private String createDate() {
-        DateFormat date = DateFormat.getTimeInstance();
-        date.setTimeZone(TimeZone.getTimeZone("GMT"));
-        return date.format(new Date());
+    public byte[] createDocument(String path) throws IOException {
+        File file = new File(path);
+        byte[] fileContent = Files.readAllBytes(file.toPath());
+        return fileContent;
     }
 
-    private StringBuffer createDocument(String path) {
+    private String createDate(){
+        SimpleDateFormat dateFormatGmt = new SimpleDateFormat("yyyy-MMM-dd HH:mm:ss");
+        dateFormatGmt.setTimeZone(TimeZone.getTimeZone("GMT"));
+        SimpleDateFormat dateFormatLocal = new SimpleDateFormat("yyyy-MMM-dd HH:mm:ss");
+        Date date = new Date();
         try {
-            BufferedReader file = new BufferedReader(new FileReader(path));
-            StringBuffer responseFile = new StringBuffer();
-            while (file.ready()) {
-                responseFile.append(file.readLine());
-            }
-            return responseFile;
-        } catch (IOException e) {
+            date = dateFormatLocal.parse( dateFormatGmt.format(new Date()) );
+        } catch (ParseException e) {
             e.printStackTrace();
-            return null;
         }
+        return String.valueOf(date);
+    }
+
+    private byte[] createResponse(byte[] headers, byte[] document) {
+        int hLength = headers.length;
+        int dLength = document.length;
+        byte[] response = new byte[hLength + dLength];
+        System.arraycopy(headers, 0, response, 0, hLength);
+        System.arraycopy(document, 0, response, hLength, dLength);
+        return response;
     }
 
     private boolean checkPath(String path) {

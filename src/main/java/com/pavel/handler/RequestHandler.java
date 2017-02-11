@@ -22,7 +22,6 @@ public class RequestHandler implements HttpRequestHandler {
         String string;
         while (true) {
             string = reader.readLine();
-            System.out.println(string);
             if (string == null || string.isEmpty()) {
                 break;
             }

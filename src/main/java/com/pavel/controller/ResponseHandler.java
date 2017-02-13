@@ -1,19 +1,13 @@
-package com.pavel.handler;
+package com.pavel.controller;
 
 import com.pavel.constants.HttpStatus;
 import com.pavel.constants.PagesPath;
-import com.pavel.handler.interfaces.HttpResponseHandler;
-import com.pavel.server.HttpParser;
+import com.pavel.controller.interfaces.HttpResponseHandler;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
 
@@ -35,8 +29,23 @@ public class ResponseHandler implements HttpResponseHandler {
     }
 
     @Override
-    public void doPost() {
+    public byte[] doPost(String url, InputStream input) throws IOException {
+        String path = HttpParser.getPath(url);
+        getInputValues(input);
+        //Map <String, String> values = HttpParser.getValuePost(url);
+        return doGet(url);
+    }
 
+    private void getInputValues(InputStream input) throws IOException {
+        /*BufferedReader reader = new BufferedReader(new InputStreamReader(input));
+        String string;
+        while (true) {
+            char ch = (char) reader.read();
+            System.out.println(ch);
+            if (ch == null || string.isEmpty()) {
+                break;
+            }
+        }*/
     }
 
     @Override

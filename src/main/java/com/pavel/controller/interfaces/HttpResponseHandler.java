@@ -1,13 +1,14 @@
-package com.pavel.handler.interfaces;
+package com.pavel.controller.interfaces;
 
 
 import java.io.IOException;
+import java.io.InputStream;
 
 public interface HttpResponseHandler {
 
     byte[] doGet(String url) throws IOException;
 
-    void doPost();
+    byte[] doPost(String url, InputStream input) throws IOException;
 
     void doHead();
 

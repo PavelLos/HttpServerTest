@@ -2,65 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e4ca5c6-dd74-4ba9-ac03-b037c6805b4a" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/www/images/header-bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/www/images/phone.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/www/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/www/index_files/Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/www/index_files/ajax.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/www/index_files/keyboard.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/www/index_files/monitor.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/www/index_files/mouse.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/www/index_files/style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/www/index_files/webserver.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/www/innerhtml/keyboard.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/www/innerhtml/monitor.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/www/innerhtml/mouse.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/www/json.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/www/json/keyboard.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/www/json/monitor.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/www/json/mouse.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/www/style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/www/text.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/www/web.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/www/xml.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/www/xml/keyboard.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/www/xml/monitor.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/www/xml/mouse.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/www/images/header-bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/www/images/phone.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/www/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/www/index_files/Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/www/index_files/ajax.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/www/index_files/keyboard.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/www/index_files/monitor.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/www/index_files/mouse.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/www/index_files/style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/www/index_files/webserver.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/www/innerhtml/keyboard.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/www/innerhtml/monitor.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/www/innerhtml/mouse.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/www/json.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/www/json/keyboard.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/www/json/monitor.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/www/json/mouse.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/www/style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/www/text.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/www/web.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/www/xml.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/www/xml/keyboard.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/www/xml/monitor.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/www/xml/mouse.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/pavel/handler/RequestHandler.class" afterPath="$PROJECT_DIR$/target/classes/com/pavel/handler/RequestHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/pavel/handler/ResponseHandler.class" afterPath="$PROJECT_DIR$/target/classes/com/pavel/handler/ResponseHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/pavel/handler/interfaces/HttpResponseHandler.class" afterPath="$PROJECT_DIR$/target/classes/com/pavel/handler/interfaces/HttpResponseHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/pavel/server/ClientSession.class" afterPath="$PROJECT_DIR$/target/classes/com/pavel/server/ClientSession.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/pages/post_show.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/pages/images/header-bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/pages/images/phone.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/pages/page1.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/pages/page2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/pages/style.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/pages/web.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/pavel/handler/RequestHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/pavel/handler/ResponseHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/pavel/handler/interfaces/HttpRequestHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/pavel/handler/interfaces/HttpResponseHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/pavel/server/ClientSession.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/pavel/server/CreateConnection.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/pavel/server/HttpParser.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pages/images/header-bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pages/images/phone.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pages/page1.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pages/page2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pages/style.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pages/web.html" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/pavel/Main.class" afterPath="$PROJECT_DIR$/target/classes/com/pavel/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/pavel/constants/PagesPath.class" afterPath="$PROJECT_DIR$/target/classes/com/pavel/constants/PagesPath.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/pavel/server/HttpResponse.class" afterPath="$PROJECT_DIR$/target/classes/com/pavel/server/HttpResponse.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pavel/handler/RequestHandler.java" afterPath="$PROJECT_DIR$/src/main/java/com/pavel/handler/RequestHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pavel/handler/ResponseHandler.java" afterPath="$PROJECT_DIR$/src/main/java/com/pavel/handler/ResponseHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pavel/handler/interfaces/HttpResponseHandler.java" afterPath="$PROJECT_DIR$/src/main/java/com/pavel/handler/interfaces/HttpResponseHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pavel/server/ClientSession.java" afterPath="$PROJECT_DIR$/src/main/java/com/pavel/server/ClientSession.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HttpServerSocket.iml" afterPath="$PROJECT_DIR$/HttpServerSocket.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pavel/Main.java" afterPath="$PROJECT_DIR$/src/main/java/com/pavel/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pavel/constants/PagesPath.java" afterPath="$PROJECT_DIR$/src/main/java/com/pavel/constants/PagesPath.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pavel/server/HttpResponse.java" afterPath="$PROJECT_DIR$/src/main/java/com/pavel/server/HttpResponse.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/pavel/handler/RequestHandler.java" afterPath="$PROJECT_DIR$/src/main/java/com/pavel/controller/RequestHandler.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/pavel/handler/ResponseHandler.java" afterPath="$PROJECT_DIR$/src/main/java/com/pavel/controller/ResponseHandler.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/pavel/handler/interfaces/HttpRequestHandler.java" afterPath="$PROJECT_DIR$/src/main/java/com/pavel/controller/interfaces/HttpRequestHandler.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/pavel/handler/interfaces/HttpResponseHandler.java" afterPath="$PROJECT_DIR$/src/main/java/com/pavel/controller/interfaces/HttpResponseHandler.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/pavel/server/ClientSession.java" afterPath="$PROJECT_DIR$/src/main/java/com/pavel/server/connection/ClientSession.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/pavel/server/CreateConnection.java" afterPath="$PROJECT_DIR$/src/main/java/com/pavel/server/connection/CreateConnection.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/pavel/server/HttpParser.java" afterPath="$PROJECT_DIR$/src/main/java/com/pavel/controller/HttpParser.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -72,8 +49,8 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/HttpServerSocket$Main.coverage" NAME="Main Coverage Results" MODIFIED="1486482603148" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.pavel.server.*</FILTER>
+    <SUITE FILE_PATH="coverage/HttpServerSocket$Main.coverage" NAME="Main Coverage Results" MODIFIED="1487017025270" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.pavel.server.connection.*</FILTER>
     </SUITE>
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -83,40 +60,20 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="ClientSession.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/pavel/server/ClientSession.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/pavel/server/connection/ClientSession.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="32" column="12" lean-forward="false" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
+            <state relative-caret-position="168">
+              <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ResponseHandler.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/pavel/handler/ResponseHandler.java">
+      <file leaf-file-name="CreateConnection.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/pavel/server/connection/CreateConnection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
-              <caret line="82" column="5" lean-forward="false" selection-start-line="82" selection-start-column="5" selection-end-line="82" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RequestHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/pavel/handler/RequestHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="27" column="32" lean-forward="true" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HttpStatus.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/pavel/constants/HttpStatus.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+            <state relative-caret-position="-206">
+              <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -125,8 +82,50 @@
       <file leaf-file-name="PagesPath.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/pavel/constants/PagesPath.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+            <state relative-caret-position="102">
+              <caret line="6" column="60" lean-forward="false" selection-start-line="6" selection-start-column="60" selection-end-line="6" selection-end-column="60" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RequestHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/pavel/controller/RequestHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="850">
+              <caret line="52" column="50" lean-forward="false" selection-start-line="52" selection-start-column="50" selection-end-line="52" selection-end-column="50" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="767">
+              <caret line="55" column="10" lean-forward="false" selection-start-line="55" selection-start-column="10" selection-end-line="55" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HttpParser.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/pavel/controller/HttpParser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="21" column="22" lean-forward="false" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ResponseHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/pavel/controller/ResponseHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="394">
+              <caret line="48" column="5" lean-forward="false" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -135,8 +134,8 @@
       <file leaf-file-name="HttpResponse.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/pavel/server/HttpResponse.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
-              <caret line="29" column="88" lean-forward="true" selection-start-line="29" selection-start-column="88" selection-end-line="29" selection-end-column="88" />
+            <state relative-caret-position="408">
+              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -154,6 +153,11 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>getPara</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -167,7 +171,6 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/java/com/pavel/server/ClientWait.java" />
         <option value="$PROJECT_DIR$/HttpServerSocket (Pavel conflicted copy 2017-02-04 03 02 02).iml" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/pavel/handler/HttpConstants.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pavel/handler/HttpHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pavel/handler/HttpRequestParser.java" />
@@ -180,7 +183,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/pavel/constants/HttpConstants.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pavel/constants/HttpMethod.java" />
         <option value="$PROJECT_DIR$/src/main/resources/pages/page1.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/pages/page2.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/pavel/handler/HttpResponse.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pavel/constants/HttpParser.java" />
         <option value="$PROJECT_DIR$/src/main/resources/pages/index.html" />
@@ -188,18 +190,27 @@
         <option value="$PROJECT_DIR$/resources/pages/page1.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/pavel/view/ServerWindow.java" />
         <option value="$PROJECT_DIR$/resources/pages/status404.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pavel/server/HttpParser.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pavel/handler/interfaces/HttpResponseHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pavel/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pavel/server/CreateConnection.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pavel/constants/HttpStatus.java" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/HttpServerSocket.iml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pavel/constants/PagesPath.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pavel/handler/RequestHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pavel/handler/ResponseHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/pages/page2.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/pages/post_show.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pavel/server/HttpParser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pavel/view/TestServlert.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pavel/server/ClientSession.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pavel/server/HttpResponse.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pavel/handler/interfaces/HttpResponseHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pavel/constants/PagesPath.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/pages/post_example.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pavel/handler/ResponseHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pavel/handler/RequestHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pavel/server/connection/ClientSession.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pavel/server/connection/CreateConnection.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pavel/controller/HttpParser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pavel/controller/RequestHandler.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -300,7 +311,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -350,36 +363,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HttpServerSocket" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HttpServerSocket" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -495,7 +478,41 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="handler" />
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="connection" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HttpServerSocket" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HttpServerSocket" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pavel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -531,8 +548,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -557,7 +572,7 @@
     <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.pavel.server.*" />
+          <option name="PATTERN" value="com.pavel.server.connection.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -972,7 +987,6 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="8e4ca5c6-dd74-4ba9-ac03-b037c6805b4a" name="Default" comment="" />
-      <changelist id="" name="New changelist" comment="" />
       <created>1486055997857</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -997,7 +1011,15 @@
       <workItem from="1486579626739" duration="619000" />
       <workItem from="1486670817531" duration="24000" />
       <workItem from="1486733383239" duration="299000" />
-      <workItem from="1486806710770" duration="9033000" />
+      <workItem from="1486806710770" duration="10632000" />
+      <workItem from="1486829516677" duration="3623000" />
+      <workItem from="1486846162518" duration="6336000" />
+      <workItem from="1486903739167" duration="2182000" />
+      <workItem from="1486923337777" duration="2247000" />
+      <workItem from="1486927405257" duration="3625000" />
+      <workItem from="1486993529127" duration="4295000" />
+      <workItem from="1487007265286" duration="2092000" />
+      <workItem from="1487012523327" duration="5209000" />
     </task>
     <task id="LOCAL-00001" summary="Commit">
       <created>1486483946326</created>
@@ -1013,46 +1035,53 @@
       <option name="project" value="LOCAL" />
       <updated>1486810610452</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Change response methods to return byte. Change date format to GMT.">
+      <created>1486818713591</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1486818713591</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76905000" />
+    <option name="totallyTimeSpent" value="108113000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991362" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.49382716" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3954496" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991362" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3261105" sideWeight="0.49573562" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32719395" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2835821" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.49382716" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35427952" sideWeight="0.49573562" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.50617284" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32699168" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31982943" sideWeight="0.5" order="7" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39761648" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.50617284" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1082,19 +1111,20 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Commit" />
     <MESSAGE value="Http Server with method GET" />
-    <option name="LAST_COMMIT_MESSAGE" value="Http Server with method GET" />
+    <MESSAGE value="Change response methods to return byte. Change date format to GMT." />
+    <option name="LAST_COMMIT_MESSAGE" value="Change response methods to return byte. Change date format to GMT." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/pavel/server/ClientSession.java</url>
-          <line>33</line>
+          <url>file://$PROJECT_DIR$/src/main/java/com/pavel/controller/RequestHandler.java</url>
+          <line>36</line>
           <properties />
-          <option name="timeStamp" value="30" />
+          <option name="timeStamp" value="55" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="32" />
+      <option name="time" value="56" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1103,36 +1133,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pavel/server/CreateConnection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pavel/server/ClientWait.java" />
-    <entry file="file://$PROJECT_DIR$/151.jpg" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/src.zip!/java/net/ServerSocket.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pavel/handler/RequestHandler (Pavel conflicted copy 2017-02-04 03 02 02).java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pavel/handler/HttpHandler (Pavel conflicted copy 2017-02-04 03 02 02).java" />
-    <entry file="file://$PROJECT_DIR$/pom (Pavel conflicted copy 2017-02-04 03 02 02).xml" />
-    <entry file="file://$PROJECT_DIR$/HttpServerSocket (Pavel conflicted copy 2017-02-04 03 02 02).iml" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pavel/server/ClientSession (Pavel conflicted copy 2017-02-04 03 02 02).java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pavel/Main (Pavel conflicted copy 2017-02-04 03 02 02).java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/src.zip!/java/lang/Runnable.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pavel/Constants.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/src.zip!/java/lang/ClassLoader.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/src.zip!/java/lang/Class.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/src.zip!/java/util/Date.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/pages/page1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/src.zip!/java/io/FileInputStream.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pavel/handler/interfaces/HttpRequestHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pavel/controller/interfaces/HttpRequestHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="10" column="25" lean-forward="false" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
@@ -1143,50 +1147,15 @@
     <entry file="file://$PROJECT_DIR$/resources/pages/index.html" />
     <entry file="file://$PROJECT_DIR$/resources/pages/web4myself.html" />
     <entry file="file://$PROJECT_DIR$/resources/pages/status404.html" />
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="20" column="18" lean-forward="false" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/pages/status404.html" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/pages/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/pages/web4myself.html" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/pages/images/phone.jpg" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/pages/images/header-bg.jpg" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/src.zip!/java/lang/Throwable.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/src.zip!/java/net/SocketInputStream.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/src.zip!/java/net/DualStackPlainSocketImpl.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/pages/web.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/pages/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pavel/handler/interfaces/HttpResponseHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="9" column="18" lean-forward="false" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/pages/web.html" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/pages/style.css" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pavel/constants/HttpMethod.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -1205,43 +1174,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pavel/server/HttpParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/pages/page2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="7" lean-forward="false" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pavel/view/ServerWindow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#825#826#0" expanded="false" />
-            <element signature="e#856#857#0" expanded="false" />
-            <element signature="e#1701#1702#0" expanded="false" />
-            <element signature="e#1758#1759#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pavel/server/CreateConnection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="602">
-          <caret line="38" column="20" lean-forward="false" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1249,7 +1185,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#206#207#0" expanded="false" />
+            <element signature="e#234#235#0" expanded="false" />
+            <element signature="e#269#270#0" expanded="false" />
+            <element signature="e#300#301#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1257,7 +1198,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="10" lean-forward="false" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1265,15 +1205,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#13556#13560#0" expanded="false" />
-            <element signature="e#13566#13570#0" expanded="false" />
-            <element signature="e#13583#13587#0" expanded="false" />
-            <element signature="e#13663#13667#0" expanded="false" />
-            <element signature="e#13673#13677#0" expanded="false" />
-            <element signature="e#13756#13760#0" expanded="false" />
-            <element signature="e#13766#13770#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1281,23 +1212,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#13105#13109#0" expanded="false" />
-            <element signature="e#13115#13119#0" expanded="false" />
-            <element signature="e#13132#13136#0" expanded="false" />
-            <element signature="e#13212#13216#0" expanded="false" />
-            <element signature="e#13222#13226#0" expanded="false" />
-            <element signature="e#13305#13309#0" expanded="false" />
-            <element signature="e#13315#13319#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1305,46 +1219,157 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="21" column="9" lean-forward="false" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/pages/page2.html" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/pages/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/pages/favicon.ico">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/pages/css_page/web.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar!/javax/servlet/http/HttpServletRequest.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="19" column="17" lean-forward="false" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar!/javax/servlet/ServletRequestWrapper.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="77" column="35" lean-forward="false" selection-start-line="77" selection-start-column="35" selection-end-line="77" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar!/javax/servlet/ServletRequest.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="37" column="11" lean-forward="false" selection-start-line="37" selection-start-column="11" selection-end-line="37" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/http/HttpServletRequest.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/ServletRequestWrapper.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/ServletRequest.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pavel/view/TestServlert.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/pages/page1.html" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/src.zip!/java/io/BufferedReader.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pavel/controller/interfaces/HttpResponseHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="47" lean-forward="false" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pavel/constants/PagesPath.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/pages/post_show.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        <state relative-caret-position="119">
+          <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pavel/server/ClientSession.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/pages/get_example.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="32" column="12" lean-forward="false" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/pages/post_example.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="18" lean-forward="false" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pavel/server/connection/CreateConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-206">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pavel/server/connection/ClientSession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pavel/server/HttpResponse.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="29" column="88" lean-forward="true" selection-start-line="29" selection-start-column="88" selection-end-line="29" selection-end-column="88" />
+        <state relative-caret-position="408">
+          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pavel/handler/RequestHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pavel/constants/PagesPath.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="27" column="32" lean-forward="true" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
+        <state relative-caret-position="102">
+          <caret line="6" column="60" lean-forward="false" selection-start-line="6" selection-start-column="60" selection-end-line="6" selection-end-column="60" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pavel/handler/ResponseHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pavel/controller/HttpParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="82" column="5" lean-forward="false" selection-start-line="82" selection-start-column="5" selection-end-line="82" selection-end-column="5" />
+        <state relative-caret-position="15">
+          <caret line="21" column="22" lean-forward="false" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pavel/controller/ResponseHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="48" column="5" lean-forward="false" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pavel/controller/RequestHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="52" column="50" lean-forward="false" selection-start-line="52" selection-start-column="50" selection-end-line="52" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="767">
+          <caret line="55" column="10" lean-forward="false" selection-start-line="55" selection-start-column="10" selection-end-line="55" selection-end-column="10" />
           <folding />
         </state>
       </provider>

@@ -1,6 +1,7 @@
-package com.pavel.server;
+package com.pavel.server.connection;
 
-import com.pavel.handler.RequestHandler;
+import com.pavel.controller.RequestHandler;
+import com.pavel.server.HttpResponse;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -33,7 +34,8 @@ public class ClientSession extends Thread {
             requestHandler.getRequestHeaders(inputRequest);
             byte[] response = httpResponse.httpMethod(
                     requestHandler.getMethod(inputRequest.get(0)),
-                    requestHandler.getRequestURI(inputRequest.get(0))
+                    requestHandler.getRequestURI(inputRequest.get(0)),
+                    input
             );
             httpResponse.sendResponse(output, response);
 

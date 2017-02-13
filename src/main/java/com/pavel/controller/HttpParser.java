@@ -1,4 +1,4 @@
-package com.pavel.server;
+package com.pavel.controller;
 
 import com.pavel.constants.PagesPath;
 
@@ -45,11 +45,16 @@ public class HttpParser {
 
     public static String getPath(String url) {
         String path = PagesPath.PATH;
+        int i = url.indexOf("?");
+        if(i > 0) url = url.substring(0, i);
+        i = url.indexOf("#");
+        if(i > 0) url = url.substring(0, i);
+
         if (url.equals("/")) {
             return PagesPath.DEFAULT_PATH;
         }
         char a;
-        for (int i = 0; i < url.length(); i++) {
+        for (i = 0; i < url.length(); i++) {
             a = url.charAt(i);
             if (a == '/')
                 path = path + File.separator;
@@ -57,5 +62,21 @@ public class HttpParser {
                 path = path + a;
         }
         return path;
+    }
+
+    public static Map<String, String> getValuePost(String url){
+        Map<String, String> values = new HashMap<>();
+        String parameters = url.substring(url.indexOf("?"), url.length());
+
+        Pattern pattern = Pattern.compile("&");
+        String[] strings = pattern.split(parameters);
+
+        for (String value: strings){
+            pattern = Pattern.compile("=");
+            String[] split = pattern.split(parameters);
+            values.put(split[0], split[1]);
+        }
+
+        return values;
     }
 }

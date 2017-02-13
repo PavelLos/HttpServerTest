@@ -1,4 +1,6 @@
-package com.pavel.server;
+package com.pavel.server.connection;
+
+import com.pavel.server.connection.ClientSession;
 
 import java.io.IOException;
 import java.net.ServerSocket;

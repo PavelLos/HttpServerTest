@@ -1,33 +1,42 @@
-package com.pavel.handler;
+package com.pavel.controller;
 
-import com.pavel.handler.interfaces.HttpRequestHandler;
-import com.pavel.server.HttpParser;
+import com.pavel.controller.interfaces.HttpRequestHandler;
 
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 
 public class RequestHandler implements HttpRequestHandler {
 
-    @Override
+    /*@Override
     public List getInputRequest(final InputStream input) throws IOException {
         List inputRequest = new ArrayList<String>();
         BufferedReader reader = new BufferedReader(new InputStreamReader(input));
         String string;
         while (true) {
             string = reader.readLine();
+            System.out.println(string);
             if (string == null || string.isEmpty()) {
                 break;
             }
             inputRequest.add(string);
         }
 
+        return inputRequest;
+    }*/
+
+    @Override
+    public List getInputRequest(final InputStream input) throws IOException {
+        List inputRequest = new ArrayList<String>();
+        int size = input.available();
+        byte []inputBytes = new byte [ size ];
+        input.read(inputBytes);
+        String str = new String(inputBytes);
+        System.out.println(str);
+        String[] strings = str.split("\\r\\n");
+        Collections.addAll(inputRequest, strings);
+        inputRequest.remove("");
         return inputRequest;
     }
 

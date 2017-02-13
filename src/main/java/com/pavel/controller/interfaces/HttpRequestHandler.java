@@ -1,4 +1,4 @@
-package com.pavel.handler.interfaces;
+package com.pavel.controller.interfaces;
 
 
 import java.io.IOException;

@@ -1,7 +1,7 @@
 package com.pavel;
 
 
-import com.pavel.server.CreateConnection;
+import com.pavel.server.connection.CreateConnection;
 
 import java.io.IOException;
 

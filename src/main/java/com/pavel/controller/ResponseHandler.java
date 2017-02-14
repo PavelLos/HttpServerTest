@@ -56,7 +56,7 @@ public class ResponseHandler {
                 "HTTP/1.1 " + status + "\r\n" +
                         "Date: " + createDate() + "\r\n" +
                         "Server: Http Server\r\n" +
-                        "Content-Type: " + contentType + "\r\n" +
+                        //"Content-Type: " + contentType + "\r\n" +
                         "Content-Length: " + length + "\r\n" +
                         "Connection: keep-alive\r\n\r\n";
         return responseHeader.getBytes();

@@ -12,10 +12,10 @@ public class CreateConnection extends Thread {
     public CreateConnection() {
         try {
             serverSocket = new ServerSocket(PORT);
+            start();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        start();
     }
 
     @Override
@@ -23,8 +23,13 @@ public class CreateConnection extends Thread {
         if (serverSocket != null) {
             while (true) {
                 Socket clientSocket = null;
-                ClientSession clientSession = null;
-                new Thread(clientSession).start();
+                try {
+                    clientSocket = serverSocket.accept();
+                    ClientSession clientSession = new ClientSession(clientSocket);
+                    clientSession.start();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }

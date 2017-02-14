@@ -3,7 +3,9 @@ package com.pavel.controller;
 import com.pavel.constants.PagesPath;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
 
@@ -32,7 +34,7 @@ public class HttpParser {
 
     public static String getUrl(final String string) {
         if (patternURL.matcher(string).matches()) {
-            return string.substring(4, string.indexOf(" ", 5));
+            return string.substring(string.indexOf(" ")+1, string.indexOf(" ", 5));
         }
         return "";
     }
@@ -65,16 +67,15 @@ public class HttpParser {
         return path;
     }
 
-    public static Map<String, String> getValues(String url) {
-        Map parameters = new HashMap<String, String>();
-        String stringOfValues = url;
-        if (url.contains("?")) {
-            stringOfValues = url.substring(url.indexOf("?"));
+    public static List<String> getValues(String string) {
+        List<String> parameters = new ArrayList<>();
+        String stringOfValues = string;
+        if (string.contains("?")) {
+            stringOfValues = string.substring(string.indexOf("?"));
         }
         String[] values = stringOfValues.split("&");
         for (String str : values) {
-            String[] strParameters = str.split("=");
-            parameters.put(strParameters[0], strParameters[1]);
+            parameters.add(str);
         }
         return parameters;
     }

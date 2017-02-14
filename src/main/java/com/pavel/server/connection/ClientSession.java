@@ -17,14 +17,18 @@ public class ClientSession extends Thread {
 
     public ClientSession(Socket clientSocket) {
         this.clientSocket = clientSocket;
-
+        try {
+            input = clientSocket.getInputStream();
+            output = clientSocket.getOutputStream();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void run() {
         try {
-            input = clientSocket.getInputStream();
-            output = clientSocket.getOutputStream();
-            httpServer = new HttpServer(input);
+            httpServer = new HttpServer();
+            httpServer.httpMethod(input);
             httpServer.sendResponse(output);
 
         } catch (IOException e) {

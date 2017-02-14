@@ -15,19 +15,12 @@ public class HttpServer {
 
     private byte[] response;
 
-    public HttpServer(InputStream input) {
-        requestHandler = new RequestHandler(input);
-        responseHandler = new ResponseHandler();
-
-        try {
-            httpMethod();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public HttpServer() {
     }
 
-    public void httpMethod() throws IOException {
-
+    public void httpMethod(InputStream input) throws IOException {
+        requestHandler = new RequestHandler(input);
+        responseHandler = new ResponseHandler();
         String method = requestHandler.getMethod();
         if (method.equals(HttpMethod.GET.getMethod())) {
             doGet();
@@ -41,13 +34,13 @@ public class HttpServer {
     }
 
     private void doGet() throws IOException {
-        response = responseHandler.createResponse(requestHandler.getRequestURI());
+        response = responseHandler.createResponse(requestHandler.getUrl());
 
     }
 
 
     private void doPost() throws IOException {
-        response = responseHandler.createResponse(requestHandler.getRequestURI(),
+        response = responseHandler.createResponse(requestHandler.getUrl(),
                 requestHandler.getRequestParametersToString());
     }
 

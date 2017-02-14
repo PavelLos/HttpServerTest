@@ -26,6 +26,7 @@ public class HttpParser {
             httpInfo.put(strings[0], strings[1]);
             return httpInfo;
         }
+        //if()
         return null;
     }
 
@@ -46,9 +47,9 @@ public class HttpParser {
     public static String getPath(String url) {
         String path = PagesPath.PATH;
         int i = url.indexOf("?");
-        if(i > 0) url = url.substring(0, i);
+        if (i > 0) url = url.substring(0, i);
         i = url.indexOf("#");
-        if(i > 0) url = url.substring(0, i);
+        if (i > 0) url = url.substring(0, i);
 
         if (url.equals("/")) {
             return PagesPath.DEFAULT_PATH;
@@ -64,19 +65,17 @@ public class HttpParser {
         return path;
     }
 
-    public static Map<String, String> getValuePost(String url){
-        Map<String, String> values = new HashMap<>();
-        String parameters = url.substring(url.indexOf("?"), url.length());
-
-        Pattern pattern = Pattern.compile("&");
-        String[] strings = pattern.split(parameters);
-
-        for (String value: strings){
-            pattern = Pattern.compile("=");
-            String[] split = pattern.split(parameters);
-            values.put(split[0], split[1]);
+    public static Map<String, String> getValues(String url) {
+        Map parameters = new HashMap<String, String>();
+        String stringOfValues = url;
+        if (url.contains("?")) {
+            stringOfValues = url.substring(url.indexOf("?"));
         }
-
-        return values;
+        String[] values = stringOfValues.split("&");
+        for (String str : values) {
+            String[] strParameters = str.split("=");
+            parameters.put(strParameters[0], strParameters[1]);
+        }
+        return parameters;
     }
 }

@@ -41,15 +41,6 @@
             <artifactId>testng</artifactId>
             <version>6.8</version>
         </dependency>
-
-        <!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
-            <version>3.0.1</version>
-        </dependency>
-
-
     </dependencies>
 
 

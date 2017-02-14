@@ -2,7 +2,6 @@ package com.pavel.controller;
 
 import com.pavel.constants.HttpStatus;
 import com.pavel.constants.PagesPath;
-import com.pavel.controller.interfaces.HttpResponseHandler;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -12,77 +11,100 @@ import java.util.Date;
 import java.util.TimeZone;
 
 
-public class ResponseHandler implements HttpResponseHandler {
+public class ResponseHandler {
 
-    @Override
-    public byte[] doGet(String url) throws IOException {
+
+    public byte[] createResponse(String url) throws IOException {
         String path = HttpParser.getPath(url);
+        byte[] document;
+        byte[] headers;
         if (checkPath(path)) {
-            byte[] document = createDocument(path);
-            byte[] headers = createHeaders(HttpStatus.STATUS_200.getConstant(), document.length);
-            return createResponse(headers, document);
+            document = createDocument(path);
+            headers = createHeaders(HttpStatus.STATUS_200.getConstant(),
+                    document.length,
+                    getContentType(path));
         } else {
-            byte[] document = createDocument(PagesPath.NOT_FOUND);
-            byte[] headers = createHeaders(HttpStatus.STATUS_404.getConstant(), document.length);
-            return createResponse(headers, document);
+            document = createDocument(PagesPath.NOT_FOUND);
+            headers = createHeaders(HttpStatus.STATUS_404.getConstant(),
+                    document.length,
+                    getContentType(path));
         }
+        return getResponseByte(headers, document);
     }
 
-    @Override
-    public byte[] doPost(String url, InputStream input) throws IOException {
+    public byte[] createResponse(String url, String documentText) throws IOException {
         String path = HttpParser.getPath(url);
-        getInputValues(input);
-        //Map <String, String> values = HttpParser.getValuePost(url);
-        return doGet(url);
+        byte[] document;
+        byte[] headers;
+        if (checkPath(path)) {
+            document = createDocument(path, documentText);
+            headers = createHeaders(HttpStatus.STATUS_200.getConstant(),
+                    document.length,
+                    getContentType(path));
+        } else {
+            document = createDocument(PagesPath.NOT_FOUND);
+            headers = createHeaders(HttpStatus.STATUS_404.getConstant(),
+                    document.length,
+                    getContentType(path));
+        }
+        return getResponseByte(headers, document);
     }
 
-    private void getInputValues(InputStream input) throws IOException {
-        /*BufferedReader reader = new BufferedReader(new InputStreamReader(input));
-        String string;
-        while (true) {
-            char ch = (char) reader.read();
-            System.out.println(ch);
-            if (ch == null || string.isEmpty()) {
-                break;
-            }
-        }*/
-    }
 
-    @Override
-    public void doHead() {
-
-    }
-
-    private byte[] createHeaders(String status, int length) {
+    private byte[] createHeaders(String status, int length, String contentType) {
         String responseHeader =
                 "HTTP/1.1 " + status + "\r\n" +
                         "Date: " + createDate() + "\r\n" +
                         "Server: Http Server\r\n" +
+                        "Content-Type: " + contentType + "\r\n" +
                         "Content-Length: " + length + "\r\n" +
                         "Connection: keep-alive\r\n\r\n";
         return responseHeader.getBytes();
     }
 
-    public byte[] createDocument(String path) throws IOException {
+    private byte[] createDocument(String path) throws IOException {
         File file = new File(path);
         byte[] fileContent = Files.readAllBytes(file.toPath());
         return fileContent;
     }
 
-    private String createDate(){
+    private byte[] createDocument(String path, String documentText) {
+        StringBuilder document = new StringBuilder();
+        byte[] fileContent = document.toString().getBytes();
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(path));
+            String fileString;
+            while (true) {
+                fileString = reader.readLine();
+                if (fileString == null || fileString.isEmpty())
+                    break;
+                document.append(fileString);
+                if (fileString.equals("<body>"))
+                    document.append(documentText);
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        fileContent = document.toString().getBytes();
+        return fileContent;
+    }
+
+    private String createDate() {
         SimpleDateFormat dateFormatGmt = new SimpleDateFormat("yyyy-MMM-dd HH:mm:ss");
         dateFormatGmt.setTimeZone(TimeZone.getTimeZone("GMT"));
         SimpleDateFormat dateFormatLocal = new SimpleDateFormat("yyyy-MMM-dd HH:mm:ss");
         Date date = new Date();
         try {
-            date = dateFormatLocal.parse( dateFormatGmt.format(new Date()) );
+            date = dateFormatLocal.parse(dateFormatGmt.format(new Date()));
         } catch (ParseException e) {
             e.printStackTrace();
         }
         return String.valueOf(date);
     }
 
-    private byte[] createResponse(byte[] headers, byte[] document) {
+    private byte[] getResponseByte(byte[] headers, byte[] document) {
         int hLength = headers.length;
         int dLength = document.length;
         byte[] response = new byte[hLength + dLength];
@@ -100,5 +122,28 @@ public class ResponseHandler implements HttpResponseHandler {
             return false;
 
         }
+    }
+
+    private String getContentType(String path) {
+        int point = path.lastIndexOf(".");
+        String contentType = "text/html";
+        if (point > 0) {
+            String ext = path.substring(point);
+            if (ext.equalsIgnoreCase("htm"))
+                contentType = "text/html";
+            else if (ext.equalsIgnoreCase("gif"))
+                contentType = "image/gif";
+            else if (ext.equalsIgnoreCase("jpg"))
+                contentType = "image/jpeg";
+            else if (ext.equalsIgnoreCase("jpeg"))
+                contentType = "image/jpeg";
+            else if (ext.equalsIgnoreCase("bmp"))
+                contentType = "image/x-xbitmap";
+            else if (ext.equalsIgnoreCase("css"))
+                contentType = "text/css";
+            else if (ext.equalsIgnoreCase("ico"))
+                contentType = "image/ico";
+        }
+        return contentType;
     }
 }

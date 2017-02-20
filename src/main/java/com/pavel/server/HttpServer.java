@@ -20,33 +20,35 @@ public class HttpServer {
 
     public void httpMethod(InputStream input) throws IOException {
         requestHandler = new RequestHandler(input);
-        responseHandler = new ResponseHandler();
-        String method = requestHandler.getMethod();
-        if (method.equals(HttpMethod.GET.getMethod())) {
-            doGet();
-        }
-        if (method.equals(HttpMethod.POST.getMethod())) {
-            doPost();
-        }
-        if (method.equals(HttpMethod.HEAD.getMethod())) {
-
+        if (requestHandler.getInputRequest().size() != 0) {
+            responseHandler = new ResponseHandler();
+            String method = requestHandler.getMethod();
+            if (method.equals(HttpMethod.GET.getMethod())) {
+                doGet();
+            }
+            if (method.equals(HttpMethod.POST.getMethod())) {
+                doPost();
+            }
+            if (method.equals(HttpMethod.HEAD.getMethod())) {
+                doHead();
+            }
         }
     }
 
     private void doGet() throws IOException {
-        response = responseHandler.createResponse(requestHandler.getUrl());
+        response = responseHandler.createGetResponse(requestHandler.getUrl());
 
     }
 
 
     private void doPost() throws IOException {
-        response = responseHandler.createResponse(requestHandler.getUrl(),
+        response = responseHandler.createPostResponse(requestHandler.getUrl(),
                 requestHandler.getRequestParametersToString());
     }
 
 
-    private void doHead() {
-
+    private void doHead() throws IOException {
+        response = responseHandler.createHeadResponse(requestHandler.getUrl());
     }
 
     public void sendResponse(OutputStream output) throws IOException {

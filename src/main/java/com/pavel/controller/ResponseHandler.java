@@ -14,7 +14,7 @@ import java.util.TimeZone;
 public class ResponseHandler {
 
 
-    public byte[] createResponse(String url) throws IOException {
+    public byte[] createGetResponse(String url) throws IOException {
         String path = HttpParser.getPath(url);
         byte[] document;
         byte[] headers;
@@ -32,7 +32,7 @@ public class ResponseHandler {
         return getResponseByte(headers, document);
     }
 
-    public byte[] createResponse(String url, String documentText) throws IOException {
+    public byte[] createPostResponse(String url, String documentText) throws IOException {
         String path = HttpParser.getPath(url);
         byte[] document;
         byte[] headers;
@@ -50,15 +50,35 @@ public class ResponseHandler {
         return getResponseByte(headers, document);
     }
 
+    public byte[] createHeadResponse(String url) throws IOException {
+        String path = HttpParser.getPath(url);
+        byte[] document;
+        byte[] headers;
+        if (checkPath(path)) {
+            document = createDocument(path);
+            headers = createHeaders(HttpStatus.STATUS_200.getConstant(),
+                    document.length,
+                    getContentType(path));
+        } else {
+            document = createDocument(PagesPath.NOT_FOUND);
+            headers = createHeaders(HttpStatus.STATUS_404.getConstant(),
+                    document.length,
+                    getContentType(path));
+        }
+
+        return headers;
+    }
 
     private byte[] createHeaders(String status, int length, String contentType) {
         String responseHeader =
                 "HTTP/1.1 " + status + "\r\n" +
                         "Date: " + createDate() + "\r\n" +
                         "Server: Http Server\r\n" +
-                        //"Content-Type: " + contentType + "\r\n" +
+                        "Content-Type: " + contentType + "\r\n" +
                         "Content-Length: " + length + "\r\n" +
-                        "Connection: keep-alive\r\n\r\n";
+                        "Connection: keep-alive\r\n" +
+                        "Last-modified: Mon, 15 Jun 2017 21:53:08 GMT\r\n"+
+                        "\r\n";
         return responseHeader.getBytes();
     }
 
@@ -131,6 +151,8 @@ public class ResponseHandler {
             String ext = path.substring(point);
             if (ext.equalsIgnoreCase("htm"))
                 contentType = "text/html";
+            else if (ext.equalsIgnoreCase("css"))
+                contentType = "text/plain";
             else if (ext.equalsIgnoreCase("gif"))
                 contentType = "image/gif";
             else if (ext.equalsIgnoreCase("jpg"))
@@ -139,8 +161,6 @@ public class ResponseHandler {
                 contentType = "image/jpeg";
             else if (ext.equalsIgnoreCase("bmp"))
                 contentType = "image/x-xbitmap";
-            else if (ext.equalsIgnoreCase("css"))
-                contentType = "text/css";
             else if (ext.equalsIgnoreCase("ico"))
                 contentType = "image/ico";
         }

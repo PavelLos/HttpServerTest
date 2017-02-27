@@ -7,6 +7,7 @@ import java.awt.*;
 
 
 public class ServerWindow extends JFrame {
+    private static ServerWindow instance;
 
     private JTextArea textArea;
     private static final int HEIGHT = Toolkit.getDefaultToolkit().getScreenSize().height / 3;
@@ -57,6 +58,7 @@ public class ServerWindow extends JFrame {
     private void startServer() {
         if (!serverIsRunning) {
             CreateConnection.getInstance().start();
+            printInfo("Server is running");
             serverIsRunning = true;
         }
     }
@@ -64,6 +66,7 @@ public class ServerWindow extends JFrame {
     private void stopServer() {
         if (serverIsRunning) {
             CreateConnection.getInstance().stopServer();
+            printInfo("Server stop working");
             serverIsRunning = false;
         }
     }
@@ -72,7 +75,14 @@ public class ServerWindow extends JFrame {
 
     }
 
-    public void printInfo(StringBuilder message) {
-        textArea.setText(String.valueOf(message));
+    public void printInfo(String message) {
+        textArea.append(message);
+    }
+
+    public static ServerWindow getInstance() {
+        if(instance == null){
+            instance = new ServerWindow();
+        }
+        return instance;
     }
 }

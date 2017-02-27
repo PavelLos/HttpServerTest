@@ -16,18 +16,23 @@ public class RequestHandler {
     private List<String> requestParameters;
     private String url;
     private String method;
+    private boolean correctRequest;
 
     public RequestHandler(final InputStream input) {
         requestParameters = new ArrayList<>();
         inputRequest = new ArrayList<>();
         httpInfo = new HashMap<>();
+        correctRequest = false;
+        readRequest(input);
+    }
 
-
+    public void readRequest(final InputStream input) {
         getInputRequest(input);
-
-        url = getRequestURI();
-        method = getRequestMethod();
-        requestParameters = getRequestParameters();
+        if (inputRequest.size() != 0) {
+            url = getRequestURI();
+            method = getRequestMethod();
+            requestParameters = getRequestParameters();
+        }
     }
 
     private void getInputRequest(final InputStream input) {
@@ -50,7 +55,7 @@ public class RequestHandler {
 
     private String getRequestURI() {
         if (inputRequest.size() == 0)
-            return "";
+            return null;
         return HttpParser.getUrl(inputRequest.get(0));
     }
 
@@ -68,12 +73,18 @@ public class RequestHandler {
         if (httpInfo.get(nameOfHeader) != null) {
             return (String) httpInfo.get(nameOfHeader);
         }
-        return "";
+        return null;
     }
 
 
     private String getRequestMethod() {
-        return HttpParser.getMethod(inputRequest.get(0));
+        String method = null;
+        method = HttpParser.getMethod(inputRequest.get(0));
+        if (method.equals(HttpMethod.POST.getMethod()) ||
+                method.equals(HttpMethod.GET.getMethod()) ||
+                method.equals(HttpMethod.HEAD.getMethod()))
+            return method;
+        return null;
     }
 
     private List<String> getRequestParameters() {
@@ -102,5 +113,18 @@ public class RequestHandler {
 
     public List<String> getInputRequest() {
         return inputRequest;
+    }
+
+    public boolean isCorrectRequest() {
+        if (correctRequest)
+            return true;
+        if (requestParameters != null)
+            if (requestParameters.size() != 0)
+                if (url != null)
+                    if (method != null) {
+                        correctRequest = true;
+                        return true;
+                    }
+        return false;
     }
 }

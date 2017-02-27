@@ -36,7 +36,7 @@ public class HttpParser {
         if (patternURL.matcher(string).matches()) {
             return string.substring(string.indexOf(" ")+1, string.indexOf(" ", 5));
         }
-        return "";
+        return null;
     }
 
     public static String getMethod(final String string) {

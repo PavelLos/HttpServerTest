@@ -1,5 +1,6 @@
 package com.pavel.server.connection;
 
+import com.pavel.view.ServerWindow;
 import org.apache.log4j.Logger;
 
 import java.io.IOException;
@@ -21,7 +22,6 @@ public class CreateConnection extends Thread {
     public CreateConnection() {
         serverSocket = null;
         socketList = new ArrayList<>();
-        startServer();
     }
 
     @Override
@@ -44,12 +44,14 @@ public class CreateConnection extends Thread {
                 try {
                     clientSocket = serverSocket.accept();
                     log.info("Client connection : " + clientSocket.getInetAddress());
+                    ServerWindow.getInstance().printInfo("Client connection : " + clientSocket.getInetAddress());
                     socketList.add(clientSocket);
                     ClientSession clientSession = new ClientSession(clientSocket);
                     clientSession.start();
                 } catch (IOException e) {
                     log.error("Client socket connection error");
-                } finally {
+                    ServerWindow.getInstance().printInfo("Client socket connection error");
+                } /*finally {
                     if (clientSocket != null) {
                         try {
                             clientSocket.close();
@@ -59,7 +61,7 @@ public class CreateConnection extends Thread {
                             clientSocket = null;
                         }
                     }
-                }
+                }*/
             }
         }
     }
@@ -69,6 +71,7 @@ public class CreateConnection extends Thread {
             try {
                 serverSocket.close();
                 log.info("Server is stopped");
+                ServerWindow.getInstance().printInfo("Server is stopped");
             } catch (IOException ignore) {
             } finally {
                 serverSocket = null;

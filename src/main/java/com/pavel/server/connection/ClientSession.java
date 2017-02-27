@@ -15,6 +15,8 @@ public class ClientSession extends Thread {
     private OutputStream output;
     private HttpServer httpServer;
 
+    //private static Lo
+
     public ClientSession(Socket clientSocket) {
         this.clientSocket = clientSocket;
         try {

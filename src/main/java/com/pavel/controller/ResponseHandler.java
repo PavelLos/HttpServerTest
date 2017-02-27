@@ -2,6 +2,7 @@ package com.pavel.controller;
 
 import com.pavel.constants.HttpStatus;
 import com.pavel.constants.PagesPath;
+import org.apache.log4j.Logger;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -12,6 +13,7 @@ import java.util.TimeZone;
 
 
 public class ResponseHandler {
+    private static Logger log = Logger.getLogger(ResponseHandler.class);
 
 
     public byte[] createGetResponse(String url) throws IOException {
@@ -23,11 +25,13 @@ public class ResponseHandler {
             headers = createHeaders(HttpStatus.STATUS_200.getConstant(),
                     document.length,
                     getContentType(path));
+            log.info("Request success: " + HttpStatus.STATUS_200);
         } else {
             document = createDocument(PagesPath.NOT_FOUND);
             headers = createHeaders(HttpStatus.STATUS_404.getConstant(),
                     document.length,
                     getContentType(path));
+            log.info("Request Error: " + HttpStatus.STATUS_404);
         }
         return getResponseByte(headers, document);
     }
@@ -41,11 +45,13 @@ public class ResponseHandler {
             headers = createHeaders(HttpStatus.STATUS_200.getConstant(),
                     document.length,
                     getContentType(path));
+            log.info("Request success: " + HttpStatus.STATUS_200);
         } else {
             document = createDocument(PagesPath.NOT_FOUND);
             headers = createHeaders(HttpStatus.STATUS_404.getConstant(),
                     document.length,
                     getContentType(path));
+            log.info("Request Error: " + HttpStatus.STATUS_404);
         }
         return getResponseByte(headers, document);
     }
@@ -59,11 +65,13 @@ public class ResponseHandler {
             headers = createHeaders(HttpStatus.STATUS_200.getConstant(),
                     document.length,
                     getContentType(path));
+            log.info("Request success: " + HttpStatus.STATUS_200);
         } else {
             document = createDocument(PagesPath.NOT_FOUND);
             headers = createHeaders(HttpStatus.STATUS_404.getConstant(),
                     document.length,
                     getContentType(path));
+            log.info("Request Error: " + HttpStatus.STATUS_404);
         }
 
         return headers;
@@ -74,10 +82,10 @@ public class ResponseHandler {
                 "HTTP/1.1 " + status + "\r\n" +
                         "Date: " + createDate() + "\r\n" +
                         "Server: Http Server\r\n" +
-                        "Content-Type: " + contentType + "\r\n" +
+                        //"Content-Type: " + contentType + "\r\n" +
                         "Content-Length: " + length + "\r\n" +
                         "Connection: keep-alive\r\n" +
-                        "Last-modified: Mon, 15 Jun 2017 21:53:08 GMT\r\n"+
+                        "Last-modified: Mon, 15 Jun 2017 21:53:08 GMT\r\n" +
                         "\r\n";
         return responseHeader.getBytes();
     }
@@ -152,7 +160,7 @@ public class ResponseHandler {
             if (ext.equalsIgnoreCase("htm"))
                 contentType = "text/html";
             else if (ext.equalsIgnoreCase("css"))
-                contentType = "text/plain";
+                contentType = "text/css";
             else if (ext.equalsIgnoreCase("gif"))
                 contentType = "image/gif";
             else if (ext.equalsIgnoreCase("jpg"))

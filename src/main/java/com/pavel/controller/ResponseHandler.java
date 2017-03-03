@@ -1,10 +1,12 @@
 package com.pavel.controller;
 
+import com.pavel.Main;
 import com.pavel.constants.HttpStatus;
 import com.pavel.constants.PagesPath;
 import org.apache.log4j.Logger;
 
 import java.io.*;
+import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -21,17 +23,17 @@ public class ResponseHandler {
         byte[] document;
         byte[] headers;
         if (checkPath(path)) {
+            log.info("Request success: " + HttpStatus.STATUS_200);
             document = createDocument(path);
             headers = createHeaders(HttpStatus.STATUS_200.getConstant(),
                     document.length,
                     getContentType(path));
-            log.info("Request success: " + HttpStatus.STATUS_200);
         } else {
+            log.info("Request Error: " + HttpStatus.STATUS_404);
             document = createDocument(PagesPath.NOT_FOUND);
             headers = createHeaders(HttpStatus.STATUS_404.getConstant(),
                     document.length,
                     getContentType(path));
-            log.info("Request Error: " + HttpStatus.STATUS_404);
         }
         return getResponseByte(headers, document);
     }
@@ -90,10 +92,41 @@ public class ResponseHandler {
         return responseHeader.getBytes();
     }
 
-    private byte[] createDocument(String path) throws IOException {
-        File file = new File(path);
-        byte[] fileContent = Files.readAllBytes(file.toPath());
+    private byte[] createDocument(String path) {
+        /*File file = new File(path);
+        byte[] fileContent = new byte[0];
+        try {
+            fileContent = Files.readAllBytes(file.toPath());
+        } catch (IOException e) {
+            log.error("Bad document creation");
+        }
+        return fileContent;*/
+
+        InputStream file = null;
+        byte[] fileContent = null;
+        try {
+            file = Main.class.getResourceAsStream(path);
+            fileContent = new byte[file.available()];
+            //byte[] buffer = new byte[1024];
+            /*int i;
+            while ((i = file.read(buffer)) != -1) {
+                fileContent = getResponseByte(fileContent, buffer);
+            }*/
+            file.read(fileContent);
+        } catch (IOException e) {
+            log.error("Bad document creation");
+        }
         return fileContent;
+        /*InputStream strm = Main.class.getResourceAsStream(path);
+        int count = 0;
+        byte[] buffer = new byte[1024*64];
+        try {
+            strm.read(buffer);
+            strm.close();
+        } catch (IOException e) {
+           log.error("Bad document creation");
+        }
+        return buffer;*/
     }
 
     private byte[] createDocument(String path, String documentText) {
@@ -142,13 +175,12 @@ public class ResponseHandler {
     }
 
     private boolean checkPath(String path) {
-        try (FileReader file = new FileReader(path)) {
+        try (InputStream strm = Main.class.getResourceAsStream(path)) {
             return true;
         } catch (FileNotFoundException e) {
             return false;
         } catch (IOException e) {
             return false;
-
         }
     }
 
@@ -173,5 +205,18 @@ public class ResponseHandler {
                 contentType = "image/ico";
         }
         return contentType;
+    }
+
+    private String createJarPath(String url) {
+        String path = null;
+        try {
+            path = Main.class.getProtectionDomain().getCodeSource().getLocation().toURI().getPath();
+            path = path.substring(path.indexOf("/") + 1, path.length());
+            path = path + HttpParser.getPath(url);
+            log.info("File path: " + path);
+        } catch (URISyntaxException e) {
+            log.error("Bad path of jar file");
+        }
+        return path;
     }
 }

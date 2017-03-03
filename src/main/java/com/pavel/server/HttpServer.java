@@ -28,7 +28,7 @@ public class HttpServer {
         requestHandler = new RequestHandler(input);
         if (requestHandler.isCorrectRequest()) {
             log.info("Client request: " + requestHandler.getMethod() + " " + requestHandler.getUrl());
-            ServerWindow.getInstance().printInfo("Client request: " + requestHandler.getInputRequest());
+            //ServerWindow.getInstance().printInfo("Client request: " + requestHandler.getInputRequest());
             responseHandler = new ResponseHandler();
             String method = requestHandler.getMethod();
             if (method.equals(HttpMethod.GET.getMethod())) {
@@ -45,7 +45,6 @@ public class HttpServer {
 
     private void doGet() throws IOException {
         response = responseHandler.createGetResponse(requestHandler.getUrl());
-        ServerWindow.getInstance().printInfo(response.toString());
         correctResponse= true;
     }
 
@@ -53,7 +52,6 @@ public class HttpServer {
     private void doPost() throws IOException {
         response = responseHandler.createPostResponse(requestHandler.getUrl(),
                 requestHandler.getRequestParametersToString());
-        ServerWindow.getInstance().printInfo(response.toString());
         correctResponse= true;
 
     }
@@ -61,7 +59,6 @@ public class HttpServer {
 
     private void doHead() throws IOException {
         response = responseHandler.createHeadResponse(requestHandler.getUrl());
-        ServerWindow.getInstance().printInfo(response.toString());
         correctResponse= true;
 
     }

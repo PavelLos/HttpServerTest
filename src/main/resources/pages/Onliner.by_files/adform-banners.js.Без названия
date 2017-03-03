@@ -1,0 +1,41 @@
+(function () {
+    var $adboxScripts = $('[data-adfscript]').next(),
+        adboxCount = $adboxScripts.length,
+        errorCount = 0,
+        loadedCount,
+        alignmentInterval;
+
+    $adboxScripts.error(function () {
+        errorCount++;
+    });
+
+    alignmentInterval = setInterval(function () {
+        var $adbox = $('[id*=adf_]');
+
+        centerAlignAdbox();
+
+        loadedCount = 0;
+
+        $adbox.each(function (key, element) {
+            //after load width of frame changes from initial 1px to normal width
+            if ($(element).outerWidth() > 1) {
+                loadedCount++;
+            }
+        });
+
+        if (loadedCount + errorCount >= adboxCount) {
+            clearInterval(alignmentInterval);
+        }
+    }, 100);
+
+    $(window).on('resize', function () {
+        centerAlignAdbox();
+    });
+
+    function centerAlignAdbox() {
+        var $adbox = $('[id*=adf_]'),
+            marginLeft = ($adbox.parent().outerWidth() - $adbox.outerWidth()) / 2;
+
+        $adbox.css('margin-left', marginLeft);
+    }
+})();

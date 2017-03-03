@@ -1,0 +1,77 @@
+var PushNotifyPanel = {
+    init: function (options) {
+        if (!this.isVisible()) {
+            return;
+        }
+
+        this.options = options || {};
+        this.showPushPanel();
+
+        $('.push-notification__link, .push-notification__close').on('click', function () {
+            $.cookie('push-panel', 'set', {path: '/', domain: options.cookieDomain, expires: 365});
+            $('.push-notification').remove();
+        });
+    },
+    isVisible: function () {
+        return $.cookie('push-panel') !== 'set' && this.isSupported();
+    },
+    isSupported: function () {
+        if (this._isSupportedFireFox() || this._isSupportedSafari()) {
+            return true;
+        }
+
+        var chromeVersion = navigator.appVersion.match(/Chrome\/(.*?) /);
+
+        // Chrome is not found in appVersion.
+        if (!chromeVersion) {
+            return false;
+        }
+
+        // Microsoft Edge
+        if (navigator.appVersion.match(/Edge/)) {
+            return false;
+        }
+
+        // Android Chrome WebView
+        if (navigator.appVersion.match(/ wv/)) {
+            return false;
+        }
+
+        // Opera
+        if (navigator.appVersion.match(/OPR\//)) {
+            return false;
+        }
+
+        // The user is on iOS
+        if (/iPad|iPhone|iPod/.test(navigator.platform)) {
+            return false;
+        }
+
+        return parseInt(chromeVersion[1].substring(0, 2)) > 41;
+    },
+    _isSupportedSafari: function () {
+        var safariVersion = navigator.appVersion.match("Version/([0-9]?).* Safari");
+        if (safariVersion == null || /iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+            return false;
+        }
+        return (parseInt(safariVersion[1]) > 7);
+    },
+    _isSupportedFireFox: function () {
+        var fireFoxVersion = navigator.userAgent.match(/(Firefox\/)([0-9]{2,}\.[0-9]{1,})/);
+        return fireFoxVersion && parseInt(fireFoxVersion[2].substring(0, 2)) > 43;
+    },
+    showPushPanel: function () {
+        var href = this.options.pageUrl + '?redirect=' + this.options.redirectUrl,
+            panelHtml = '<div class="push-notification push-notification_visible">' +
+            '<div class="push-notification__container">' +
+                '<div class="push-notification__close">X</div>' +
+                '<div class="push-notification__content">' +
+                    '<a href="' + href +'" class="push-notification__link">Включите уведомления</a> ' +
+                    'Onliner, чтобы сразу получать самые важные новости. Никакого спама, обещаем' +
+                '</div>' +
+            '</div>' +
+        '</div>';
+
+        $('body').append(panelHtml);
+    }
+};

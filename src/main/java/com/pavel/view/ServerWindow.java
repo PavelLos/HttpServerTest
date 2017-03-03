@@ -19,6 +19,7 @@ public class ServerWindow extends JFrame {
         createTextField();
         createButtons();
         createFrame();
+        CreateConnection.getInstance();
     }
 
     private void createFrame() {
@@ -57,7 +58,8 @@ public class ServerWindow extends JFrame {
 
     private void startServer() {
         if (!serverIsRunning) {
-            CreateConnection.getInstance().start();
+            CreateConnection createConnection = CreateConnection.getInstance();
+            createConnection.start();
             printInfo("Server is running");
             serverIsRunning = true;
         }
@@ -72,15 +74,16 @@ public class ServerWindow extends JFrame {
     }
 
     private void cleanLog() {
-
+        textArea.setText("");
     }
 
     public void printInfo(String message) {
         textArea.append(message);
+        textArea.append("\n");
     }
 
     public static ServerWindow getInstance() {
-        if(instance == null){
+        if (instance == null) {
             instance = new ServerWindow();
         }
         return instance;

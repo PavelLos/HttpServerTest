@@ -34,7 +34,7 @@ public class HttpParser {
 
     public static String getUrl(final String string) {
         if (patternURL.matcher(string).matches()) {
-            return string.substring(string.indexOf(" ")+1, string.indexOf(" ", 5));
+            return string.substring(string.indexOf(" ") + 1, string.indexOf(" ", 5));
         }
         return null;
     }
@@ -59,9 +59,9 @@ public class HttpParser {
         char a;
         for (i = 0; i < url.length(); i++) {
             a = url.charAt(i);
-            if (a == '/')
+            /*if (a == '/')
                 path = path + File.separator;
-            else
+            else*/
                 path = path + a;
         }
         return path;

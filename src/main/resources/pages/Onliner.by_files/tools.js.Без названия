@@ -1,0 +1,102 @@
+$(function () {
+
+    function getURLParameter(name) {
+        return decodeURI(
+            (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search) || [, null])[1]
+        );
+    }
+
+    function setCookie(name, value, expires) {
+        document.cookie = name + "=" + value + ";expires=" + expires.toUTCString() + ";domain=.onliner." + document.location.host.split('.').pop() + ";path=/";
+    }
+
+    function getCookie(c_name) {
+        var i, x, y, ARRcookies = document.cookie.split(";");
+        for (i = 0; i < ARRcookies.length; i++) {
+            x = ARRcookies[i].substr(0, ARRcookies[i].indexOf("="));
+            y = ARRcookies[i].substr(ARRcookies[i].indexOf("=") + 1);
+            x = x.replace(/^\s+|\s+$/g, "");
+            if (x == c_name) {
+                return unescape(y);
+            }
+        }
+    }
+
+    jQuery.fn.clientCenter = function () {
+        if (this.outerHeight() < $(window).height()) {
+            this.css('top', (($(window).height() - this.outerHeight()) / 2) + 'px');
+        } else {
+            this.css('top', 0);
+        }
+        ;
+        if (this.outerWidth() < $(window).width()) {
+            this.css('left', (($(document).width() - this.outerWidth()) / 2) + 'px');
+        } else {
+            this.css('left', 0);
+        }
+        return this;
+    };
+
+    var Popup = function (options) {
+        this.options = {
+            container: '#b-popup-outlayer',
+            close: '.close',
+            apply: '.apply'
+        };
+
+        $.extend(this, this.options, options);
+
+        this.container = $(this.container);
+        this.events();
+        this.init();
+    };
+
+    Popup.prototype.init = function () {
+        this.container.show();
+        this.container.prependTo('#container');
+        this.container.children().clientCenter();
+    };
+
+    Popup.prototype.hide = function () {
+        this.container.hide();
+        if ($.isFunction(this.actions.close)) {
+            this.actions.close();
+        }
+    };
+
+    Popup.prototype.events = function () {
+        // close button
+        this.container.find(this.close).click($.proxy(function () {
+            this.hide();
+
+            return false;
+        }, this));
+
+        // apply button
+        this.container.find(this.apply).click($.proxy(function () {
+            this.container.hide();
+            if ($.isFunction(this.actions.apply)) {
+                this.actions.apply();
+            }
+
+            return false;
+        }, this));
+
+        // click over popup
+        this.container.click($.proxy(function (e) {
+            if ($(e.target).is(this.options.container)) {
+                this.hide();
+            }
+        }, this));
+        // esc press
+        $(window).keydown($.proxy(function (event) {
+            if (event.keyCode == 27) {
+                this.hide();
+            }
+        }, this));
+        $(window).resize($.proxy(function () {
+            this.container.children().clientCenter();
+        }, this));
+    };
+
+});

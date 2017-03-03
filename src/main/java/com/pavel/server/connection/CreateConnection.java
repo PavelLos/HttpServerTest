@@ -17,11 +17,9 @@ public class CreateConnection extends Thread {
     private static CreateConnection instance = null;
     private static final Logger log = Logger.getLogger(CreateConnection.class);
 
-    private List<Socket> socketList;
 
     public CreateConnection() {
         serverSocket = null;
-        socketList = new ArrayList<>();
     }
 
     @Override
@@ -29,15 +27,10 @@ public class CreateConnection extends Thread {
         try {
             serverSocket = new ServerSocket(PORT);
             log.info("Server socket created in PORT: " + PORT);
-            startServer();
         } catch (IOException e) {
-            log.error("Server socket not created in PORT: " + PORT);
-        } finally {
-            stopServer();
+            log.error("Client socket connection error");
+            ServerWindow.getInstance().printInfo("Client socket connection error");
         }
-    }
-
-    public void startServer() {
         if (serverSocket != null) {
             while (!serverSocket.isClosed()) {
                 Socket clientSocket = null;
@@ -45,13 +38,40 @@ public class CreateConnection extends Thread {
                     clientSocket = serverSocket.accept();
                     log.info("Client connection : " + clientSocket.getInetAddress());
                     ServerWindow.getInstance().printInfo("Client connection : " + clientSocket.getInetAddress());
-                    socketList.add(clientSocket);
                     ClientSession clientSession = new ClientSession(clientSocket);
                     clientSession.start();
                 } catch (IOException e) {
                     log.error("Client socket connection error");
                     ServerWindow.getInstance().printInfo("Client socket connection error");
-                } /*finally {
+                }
+            }
+        }
+    }
+
+    /*@Override
+    public void run() {
+        try {
+            serverSocket = new ServerSocket(PORT);
+            log.info("Server socket created in PORT: " + PORT);
+            if (serverSocket != null) {
+                while (!serverSocket.isClosed()) {
+                    Socket clientSocket = null;
+                    log.info("Server is running now");
+                    clientSocket = serverSocket.accept();
+                    log.info("Client connection : " + clientSocket.getInetAddress());
+                    ServerWindow.getInstance().printInfo("Client connection : " + clientSocket.getInetAddress());
+                    socketList.add(clientSocket);
+                    ClientSession clientSession = new ClientSession(clientSocket);
+                    clientSession.start();
+                    *//*try {
+
+                    } catch (IOException e) {
+                        if (serverSocket.isClosed()) {
+                            log.error("Client socket connection error");
+                            ServerWindow.getInstance().printInfo("Client socket connection error");
+                        }
+                    }*//*
+                *//*finally {
                     if (clientSocket != null) {
                         try {
                             clientSocket.close();
@@ -61,20 +81,60 @@ public class CreateConnection extends Thread {
                             clientSocket = null;
                         }
                     }
-                }*/
+                }*//*
+                }
+            }
+        } catch (IOException e) {
+            log.error("Server socket not created in PORT: " + PORT);
+        } *//*finally {
+            stopServer();
+        }*//*
+    }*/
+
+    /*public void startServer() {
+        if (serverSocket != null) {
+            while (!serverSocket.isClosed()) {
+                Socket clientSocket = null;
+                if (isStop) {
+                    this.notify();
+                    isStop = false;
+                }
+                try {
+                    log.info("Server is running now");
+                    clientSocket = serverSocket.accept();
+                    log.info("Client connection : " + clientSocket.getInetAddress());
+                    ServerWindow.getInstance().printInfo("Client connection : " + clientSocket.getInetAddress());
+                    socketList.add(clientSocket);
+                    ClientSession clientSession = new ClientSession(clientSocket);
+                    clientSession.start();
+                } catch (IOException e) {
+                    if (serverSocket.isClosed()) {
+                        log.error("Client socket connection error");
+                        ServerWindow.getInstance().printInfo("Client socket connection error");
+                    }
+                }
+                *//*finally {
+                    if (clientSocket != null) {
+                        try {
+                            clientSocket.close();
+                            log.info("Client is disconnected: " + clientSocket.getInetAddress());
+                        } catch (IOException e) {
+                        } finally {
+                            clientSocket = null;
+                        }
+                    }
+                }*//*
             }
         }
-    }
+    }*/
 
     public void stopServer() {
         if (serverSocket != null) {
             try {
                 serverSocket.close();
                 log.info("Server is stopped");
-                ServerWindow.getInstance().printInfo("Server is stopped");
-            } catch (IOException ignore) {
-            } finally {
-                serverSocket = null;
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         }
     }

@@ -1,0 +1,166 @@
+var Onliner = Onliner || {};
+
+Onliner.Tiles = {
+    asset: []
+};
+
+/**
+ * Randomize widget's tiles
+ * @param widget_id
+ * @return $tile
+ */
+Onliner.Tiles.randomize = function (widget_id) {
+    var $container = $('#' + widget_id),
+        $tiles = $container.find('.' + widget_id),
+        $tile;
+
+    // TODO: remove this layer from templates
+    $('#' + widget_id + '-cap').hide();
+
+    $container.find('.placeholder').hide();
+
+    $tile = $tiles.eq(Math.floor(Math.random() * $tiles.length));
+    $tile.show();
+
+    return $tile;
+};
+
+Onliner.Tiles.autoscale = function ($widget) {
+    if (!$widget) {
+        return;
+    }
+
+    var self = this,
+        $frame = $widget.find('iframe');
+
+    if (!$frame.length) {
+        return;
+    }
+
+    self._scaleFrame($widget, $frame);
+
+    $(window).resize(function () {
+        self._scaleFrame($widget, $frame);
+    });
+};
+
+Onliner.Tiles.truncate = function ($container, again) {
+    if (!$container) {
+        return false;
+    }
+
+    var truncate_map = {
+        'max-lines-1': 1,
+        'max-lines-2': 2,
+        'max-lines-3': 3,
+        'max-lines-4': 4,
+        'max-lines-5': 5
+    };
+
+    $.each(truncate_map, function (key, value) {
+        $container.find('.' + key).trunk8({
+            lines: value
+        });
+    });
+
+    if (!again) {
+        Onliner.Tiles.asset.push($container);
+    }
+
+    return $container;
+};
+
+Onliner.Tiles.truncateAgain = function () {
+    $.each(Onliner.Tiles.asset, function (iter, item) {
+        Onliner.Tiles.truncate(item, true);
+    });
+
+    return Onliner.Tiles.asset;
+};
+
+Onliner.Tiles._scaleFrame = function ($parent, $child) {
+    var parentHeight = $parent.height(),
+        parentWidth = $parent.width(),
+        childHeight = $child.height(),
+        childWidth = $child.width(),
+        scale = Math.max(parentHeight / childHeight, parentWidth / childWidth);
+
+    $child.css({
+        'position': 'absolute',
+        'top': '50%',
+        'left': '50%',
+        '-webkit-transform': 'translateX(-50%) translateY(-50%) scale(' + scale + ')',
+        '-o-transform': 'translateX(-50%) translateY(-50%) scale(' + scale + ')',
+        'transform': 'translateX(-50%) translateY(-50%) scale(' + scale + ')'
+    });
+};
+
+$(function initTiles() {
+
+    // Sync img and text link hover
+    var $recImg = $('.b-tile-img', $('.b-tile-recommended'));
+
+    $recImg.hover(function () {
+        $(this).siblings('.b-tile-header').find('a').addClass('hover');
+    }, function () {
+        $(this).siblings('.b-tile-header').find('a').removeClass('hover');
+    });
+
+    // Popular images crossfade
+    $('.b-tile-popular').each(function () {
+        var $container = $(this),
+            $slides = $container.find('.b-tile-popular-img'),
+            $slide;
+
+        $container.find('.item a').hover(function () {
+            $slide = $slides.eq($(this).data('index'));
+            $slides.filter(':animated').not('.last-animated').stop(true, false);
+            $slide.stop(true, false);
+            $slide.fadeTo(1000, 1);
+        }, function () {
+            $slide.addClass('last-animated');
+            $slide.fadeTo(1000, 0, function () {
+                $(this).removeClass('last-animated');
+            });
+        });
+    });
+
+    $('.b-tile').hover(function () {
+        $('.b-tile-grad', $(this)).addClass('last-animated').fadeTo(200, 1);
+    }, function () {
+        $('.b-tile-grad', $(this)).not('last-animated').stop(true, false);
+        $('.b-tile-grad', $(this)).fadeTo(200, 0.5);
+    });
+
+    function truncateBaraholkaPopular() {
+        var $container = $('.b-tile-popular--baraholka').find('.b-tile-popular-list'),
+            $items = $container.find('.item'),
+            containerHeight = $container.height(),
+            itemsHeight = 0;
+
+        $items.hide();
+
+        $items.each(function (iter, item) {
+            var $item = $(item);
+
+            // Reflow first -> get right height
+            $item.show();
+
+            itemsHeight += $item.height();
+
+            if (itemsHeight >= containerHeight) {
+                $item.hide();
+                return false;
+            }
+        });
+    }
+
+    truncateBaraholkaPopular();
+
+    function truncateTiles() {
+        Onliner.Tiles.truncateAgain();
+        truncateBaraholkaPopular();
+    }
+
+    $(window).on('resize', $.debounce(200, truncateTiles));
+});

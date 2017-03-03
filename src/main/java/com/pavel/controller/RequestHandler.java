@@ -1,6 +1,8 @@
 package com.pavel.controller;
 
 import com.pavel.constants.HttpMethod;
+import com.pavel.view.ServerWindow;
+import org.apache.log4j.Logger;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -17,6 +19,7 @@ public class RequestHandler {
     private String url;
     private String method;
     private boolean correctRequest;
+    private static Logger log = Logger.getLogger(RequestHandler.class);
 
     public RequestHandler(final InputStream input) {
         requestParameters = new ArrayList<>();
@@ -45,6 +48,10 @@ public class RequestHandler {
             String[] strings = str.split("\\r\\n");
             for (String s : strings) {
                 inputRequest.add(s);
+                ServerWindow.getInstance().printInfo(s);
+            }
+            if (inputRequest.size() == 0) {
+
             }
             inputRequest.remove("");
         } catch (IOException e) {
@@ -54,9 +61,13 @@ public class RequestHandler {
 
 
     private String getRequestURI() {
-        if (inputRequest.size() == 0)
-            return null;
-        return HttpParser.getUrl(inputRequest.get(0));
+        if (inputRequest.size() != 0) {
+            String url = HttpParser.getUrl(inputRequest.get(0));
+            log.info("Client request url: " + url);
+            return url;
+        }
+        log.error("Client request url is wrong");
+        return null;
     }
 
 
@@ -82,8 +93,11 @@ public class RequestHandler {
         method = HttpParser.getMethod(inputRequest.get(0));
         if (method.equals(HttpMethod.POST.getMethod()) ||
                 method.equals(HttpMethod.GET.getMethod()) ||
-                method.equals(HttpMethod.HEAD.getMethod()))
+                method.equals(HttpMethod.HEAD.getMethod())) {
+            log.info("Client request method: " + method);
             return method;
+        }
+        log.error("Client request method is wrong");
         return null;
     }
 

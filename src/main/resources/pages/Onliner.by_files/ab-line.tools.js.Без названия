@@ -1,0 +1,20 @@
+var $abSelects = $('.js-ab-selects'),
+	$customSelect = $('.custom-select', $abSelects);
+
+$(function () {
+	abSelects ();
+	$customSelect.on('change', function () {
+		abSelects ();
+	});
+});
+
+function abSelects () {
+	$customSelect.each(function () {
+		var selectedVal = $('option:selected', $(this)).val();
+		$('.pseudo-select-i', $(this)).text(selectedVal);
+		var disabled = $('select', $(this)).attr('disabled');
+		if (typeof disabled !== 'undefined' && disabled !== false) {
+			$(this).addClass('disabled');
+		}
+	});
+}

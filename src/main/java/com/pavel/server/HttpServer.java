@@ -15,8 +15,6 @@ public class HttpServer {
     private ResponseHandler responseHandler;
     private RequestHandler requestHandler;
 
-    private static Logger log = Logger.getLogger(HttpServer.class);
-
     private byte[] response;
     private boolean correctResponse;
 
@@ -27,8 +25,6 @@ public class HttpServer {
     public void httpMethod(InputStream input) throws IOException {
         requestHandler = new RequestHandler(input);
         if (requestHandler.isCorrectRequest()) {
-            log.info("Client request: " + requestHandler.getMethod() + " " + requestHandler.getUrl());
-            //ServerWindow.getInstance().printInfo("Client request: " + requestHandler.getInputRequest());
             responseHandler = new ResponseHandler();
             String method = requestHandler.getMethod();
             if (method.equals(HttpMethod.GET.getMethod())) {

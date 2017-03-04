@@ -1,6 +1,8 @@
 package com.pavel.server.connection;
 
 import com.pavel.server.HttpServer;
+import com.pavel.view.ServerWindow;
+import org.apache.log4j.Logger;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -14,8 +16,7 @@ public class ClientSession extends Thread {
     private InputStream input;
     private OutputStream output;
     private HttpServer httpServer;
-
-    //private static Lo
+    private static Logger log = Logger.getLogger(ClientSession.class);
 
     public ClientSession(Socket clientSocket) {
         this.clientSocket = clientSocket;
@@ -29,25 +30,28 @@ public class ClientSession extends Thread {
 
     public void run() {
         try {
-            httpServer = new HttpServer();
-            httpServer.httpMethod(input);
-            httpServer.sendResponse(output);
-
+            if (input != null && output != null) {
+                httpServer = new HttpServer();
+                httpServer.httpMethod(input);
+                httpServer.sendResponse(output);
+            }
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
             try {
-                if (clientSocket != null) {
-                    clientSocket.close();
-                }
                 if (output != null) {
                     output.close();
                 }
                 if (input != null) {
                     input.close();
                 }
+                if (clientSocket != null) {
+                    log.info("Client: " + clientSocket.getInetAddress() + " is disconnect");
+                    ServerWindow.getInstance().printInfo("Client: " + clientSocket.getInetAddress() + " is disconnect\r\n");
+                    clientSocket.close();
+                }
             } catch (IOException e) {
-                e.printStackTrace();
+                log.error("Client: " + clientSocket.getInetAddress() + " can't disconnect");
             }
         }
     }

@@ -45,17 +45,14 @@ public class RequestHandler {
             byte[] inputBytes = new byte[size];
             input.read(inputBytes);
             String str = new String(inputBytes);
+            ServerWindow.getInstance().printInfo(str);
             String[] strings = str.split("\\r\\n");
             for (String s : strings) {
                 inputRequest.add(s);
-                ServerWindow.getInstance().printInfo(s);
-            }
-            if (inputRequest.size() == 0) {
-
             }
             inputRequest.remove("");
         } catch (IOException e) {
-            e.printStackTrace();
+            log.error("Can't read input request");
         }
     }
 
@@ -112,7 +109,8 @@ public class RequestHandler {
     public String getRequestParametersToString() {
         StringBuilder parameters = new StringBuilder();
         for (int i = 0; i < requestParameters.size(); i++) {
-            parameters.append(requestParameters);
+            parameters.append(requestParameters.get(i));
+            parameters.append("\r\n");
         }
         return parameters.toString();
     }
@@ -132,8 +130,8 @@ public class RequestHandler {
     public boolean isCorrectRequest() {
         if (correctRequest)
             return true;
-        if (requestParameters != null)
-            if (requestParameters.size() != 0)
+        if (inputRequest != null)
+            if (inputRequest.size() != 0)
                 if (url != null)
                     if (method != null) {
                         correctRequest = true;

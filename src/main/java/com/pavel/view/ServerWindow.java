@@ -8,7 +8,7 @@ import java.awt.*;
 
 public class ServerWindow extends JFrame {
     private static ServerWindow instance;
-
+    private CreateConnection createConnection;
     private JTextArea textArea;
     private static final int HEIGHT = Toolkit.getDefaultToolkit().getScreenSize().height / 3;
     private static final int WIDTH = Toolkit.getDefaultToolkit().getScreenSize().width / 4;
@@ -19,7 +19,6 @@ public class ServerWindow extends JFrame {
         createTextField();
         createButtons();
         createFrame();
-        CreateConnection.getInstance();
     }
 
     private void createFrame() {
@@ -33,10 +32,6 @@ public class ServerWindow extends JFrame {
         textArea = new JTextArea();
         textArea.setEditable(false);
         add(new JScrollPane(textArea));
-    }
-
-    public JTextArea getTextArea() {
-        return textArea;
     }
 
     public void createButtons() {
@@ -58,17 +53,15 @@ public class ServerWindow extends JFrame {
 
     private void startServer() {
         if (!serverIsRunning) {
-            CreateConnection createConnection = CreateConnection.getInstance();
+            createConnection = new CreateConnection();
             createConnection.start();
-            printInfo("Server is running");
             serverIsRunning = true;
         }
     }
 
     private void stopServer() {
         if (serverIsRunning) {
-            CreateConnection.getInstance().stopServer();
-            printInfo("Server stop working");
+            createConnection.stopServer();
             serverIsRunning = false;
         }
     }
@@ -78,8 +71,10 @@ public class ServerWindow extends JFrame {
     }
 
     public void printInfo(String message) {
-        textArea.append(message);
-        textArea.append("\n");
+        synchronized (ServerWindow.class) {
+            textArea.append(message);
+            textArea.append("\r\n");
+        }
     }
 
     public static ServerWindow getInstance() {

@@ -29,6 +29,11 @@ public class RequestHandler {
         readRequest(input);
     }
 
+
+    /**
+     * Метод, читающий входящий запрос.
+     * @param input, содержащий поток байт входного запроса.
+     */
     public void readRequest(final InputStream input) {
         getInputRequest(input);
         if (inputRequest.size() != 0) {
@@ -38,6 +43,11 @@ public class RequestHandler {
         }
     }
 
+
+    /**
+     * Метод, читающий входящий запрос.
+     * @param input, содержащий поток байт входного запроса.
+     */
     private void getInputRequest(final InputStream input) {
         int size = 0;
         try {
@@ -57,6 +67,10 @@ public class RequestHandler {
     }
 
 
+    /**
+     * Метод, получающий URI из запроса клиента
+     * @return URI
+     */
     private String getRequestURI() {
         if (inputRequest.size() != 0) {
             String url = HttpParser.getUrl(inputRequest.get(0));
@@ -67,7 +81,12 @@ public class RequestHandler {
         return null;
     }
 
-
+    /**
+     * Метод, формирующий headers из запроса клиента.
+     * @param input
+     * @return httpInfo
+     * @throws IOException
+     */
     public Map<String, String> getRequestHeaders(List<String> input) throws IOException {
         for (String request : input) {
             if (HttpParser.getSplitRequest(request) != null) {
@@ -77,14 +96,10 @@ public class RequestHandler {
         return httpInfo;
     }
 
-    private String getRequestHeader(String nameOfHeader) throws IOException {
-        if (httpInfo.get(nameOfHeader) != null) {
-            return (String) httpInfo.get(nameOfHeader);
-        }
-        return null;
-    }
-
-
+    /**
+     * Метод, получающий тип Http запроса
+     * @return method
+     */
     private String getRequestMethod() {
         String method = null;
         method = HttpParser.getMethod(inputRequest.get(0));
@@ -98,6 +113,10 @@ public class RequestHandler {
         return null;
     }
 
+    /**
+     * Метод, формирующий все параметры из запрсо клиента
+     * @return requestParameters
+     */
     private List<String> getRequestParameters() {
         if (method.equals(HttpMethod.GET.getMethod()))
             requestParameters = HttpParser.getValues(url);
@@ -106,6 +125,10 @@ public class RequestHandler {
         return requestParameters;
     }
 
+    /**
+     * Метод, возвращающий параметры запроса в виде строки.
+     * @return parameters
+     */
     public String getRequestParametersToString() {
         StringBuilder parameters = new StringBuilder();
         for (int i = 0; i < requestParameters.size(); i++) {
@@ -127,6 +150,10 @@ public class RequestHandler {
         return inputRequest;
     }
 
+    /**
+     * Метод, проверяющий корректность входящего запроса и возвращающий true или false
+     * @return boolean
+     */
     public boolean isCorrectRequest() {
         if (correctRequest)
             return true;
